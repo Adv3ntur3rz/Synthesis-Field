@@ -1,4 +1,4 @@
-![Video Demo](https://github.com/Adv3ntur3rz/Synthesis-Field/blob/main/images/video.gif0
+![Video Demo](https://github.com/Adv3ntur3rz/Synthesis-Field/blob/main/images/video.gif)
 # Synthesis Field
 try it for yourself on my website [here](https://randielzoquier.com/web_projects/synthfield/)!
 
