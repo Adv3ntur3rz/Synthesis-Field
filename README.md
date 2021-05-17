@@ -14,6 +14,6 @@ There is also a few layers of frequency, amplitude, and filter modulation for ea
 
 A waveform of each node is displayed at the center of the screen, matching the color of the node itself.
 
-##Other features
+## Other features
 
   You can choose to delete nodes after you have placed them by switching to the "erase" function. There is also a recording feature if you want to record the sound that the synth makes.
