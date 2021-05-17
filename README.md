@@ -12,6 +12,8 @@ Users can create an evolving drone synth sound by placing nodes on the field and
 
 There is also a few layers of frequency, amplitude, and filter modulation for each individual node, based on their coordinate position as well as their rotational position around the center axis.
 
+Nodes gravitate toward each other if they are close enough, which creates an added effect of change over time.
+
 A waveform of each node is displayed at the center of the screen, matching the color of the node itself.
 
 ## Other features
