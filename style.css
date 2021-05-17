@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+canvas {
+  display: block;
+}
+
+body{
+  overflow: hidden;
+  font-family: 'Raleway', sans-serif;
+}
+
+#selector{
+
+  font-size: 2.5vh;
+  color: white;
+  position: fixed;
+  top: 1vh;
+  right: 2vw;
+}
+
+#selector input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  border-radius: 50%;
+  width: 2vh;
+  height: 2vh;
+
+  border: 3px solid #2c7479;
+  transition: 0.2s all ease;
+  margin-right: 5px;
+
+  position: relative;
+}
+
+#selector input:checked {
+  border: 1vh solid #51cccc;
+}
+
+#selector label{
+  margin-right: 1vw;
+}
+
+#rec{
+  position: fixed;
+  bottom: 1vh;
+  left:35vw;
+  width: 30vw;
+  text-align: center;
+}
+
+#rec button{
+  width: 10vw;
+  border: 3px solid #51cccc;
+  border-radius: 50px;
+  color: white;
+  background-color: #0e0e0e;
+  padding: 5px 10px;
+  margin: 0 1.25vw;
+}
+
+#rec button:disabled{
+  border: 3px solid #2c7479;
+}
+
+@media (max-width: 1000px) {
+
+  #selector{
+    font-size: 3.5vh;
+    top: 2vh;
+  }
+
+  #selector input{
+    width: 3vh;
+    height: 3vh;
+    border-width: 6px;
+  }
+
+  #selector input:checked{
+    border-width: 1.5vh;
+  }
+
+  #selector label{
+    margin-right: 2vw;
+  }
+
+  #rec{
+    width: 60vw;
+    left: 20vw;
+  }
+
+  #rec button{
+    width: 25vw;
+  }
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/addons/p5.sound.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8" />
+
+  </head>
+  <body>
+
+    <div id="selector">
+      <input type="radio" id="add" name="actionSelector" value="add" checked>
+      <label for="add"> Add / Edit </label>
+      <input type="radio" id="eraseRadio" name="actionSelector" value="erase">
+      <label for="eraseRadio"> Erase </label>
+    </div>
+
+    <div id="rec">
+      <button type="button" id="record" onclick="record()"> Record </button>
+      <button type="button" id="stop" disabled onclick="stopRecord()"> Stop </button>
+    </div>
+
+    <script src="sketch.js"></script>
+  </body>
+</html>
