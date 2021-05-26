@@ -7,6 +7,10 @@ Creative Programming II
 
 *Synthesis Field
 
+TODO:
+  -Volume slider
+  -tutorial
+  -keys
 */
 
 
@@ -23,7 +27,7 @@ let taskBarSize; //size of bottom and top bars that hold UI elements
 
 let recording, recordButton, stopRecordButton; //recording things
 let recorder, recordedFile; //^^ cont.
-
+let volumeSlider;
 //C scale in MIDI numbers
 let scale = [36, 38, 40, 41, 43, 45, 47, 48, 50, 52, 53, 55, 57, 59, 60, 62, 64, 65, 67, 69, 71, 72, 74, 76,77, 79, 81, 83, 84, 86, 88, 89, 91, 93, 95, 96];
 
@@ -34,6 +38,8 @@ function setup() {
   recording = false;
   recordButton = document.getElementById("record");
   stopRecordButton = document.getElementById('stop');
+
+  volumeSlider = document.getElementById("volumeSlider");
 
   recorder = new p5.SoundRecorder();
   recordedFile = new p5.SoundFile();
@@ -93,6 +99,7 @@ function draw() {
 function ui(){
   actionSelector();
 
+  masterVolume(map(volumeSlider.value, 0, 100, 0, 1));
   //center
   noFill();
   stroke(0,0 , 100, 0.4);

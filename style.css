@@ -11,6 +11,49 @@ canvas {
 body{
   overflow: hidden;
   font-family: 'Raleway', sans-serif;
+  color: white;
+}
+
+#volume{
+  position: fixed;
+  top: 1.25vh;
+  left: 5vh;
+}
+
+#volume p{
+  display: inline;
+  margin: 1vw;
+  font-size: 2.5vh;
+}
+
+#volumeSlider{
+  display: inline;
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  outline: none;
+  height: 0.5vh;
+  background-color: #393939;
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+#volumeSlider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 2vh; /* Set a specific slider handle width */
+  height: 2vh; /* Slider handle height */
+  background: #51cccc; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+  border: none;
+  border-radius: 50%;
+}
+
+#volumeSlider::-moz-range-thumb {
+  width: 2vh; /* Set a specific slider handle width */
+  height: 2vh; /* Slider handle height */
+  background: #51cccc; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+  border: none;
+  border-radius: 50%;
 }
 
 #selector{
@@ -70,6 +113,13 @@ body{
 
 @media (max-width: 1000px) {
 
+  #volume{
+    top: 2vh;  
+  }
+
+  #volume p{
+    font-size: 3.5vh;
+  }
   #selector{
     font-size: 3.5vh;
     top: 2vh;
