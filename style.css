@@ -28,32 +28,49 @@ body{
 
 #volumeSlider{
   display: inline;
-  -webkit-appearance: none;  /* Override default CSS styles */
+  -webkit-appearance: none;
   appearance: none;
   outline: none;
   height: 0.5vh;
   background-color: #393939;
 }
 
-/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
 #volumeSlider::-webkit-slider-thumb {
-  -webkit-appearance: none; /* Override default look */
+  -webkit-appearance: none;
   appearance: none;
-  width: 2vh; /* Set a specific slider handle width */
-  height: 2vh; /* Slider handle height */
-  background: #51cccc; /* Green background */
-  cursor: pointer; /* Cursor on hover */
+  width: 2vh;
+  height: 2vh;
+  background: #51cccc;
+  cursor: pointer;
   border: none;
   border-radius: 50%;
 }
 
 #volumeSlider::-moz-range-thumb {
-  width: 2vh; /* Set a specific slider handle width */
-  height: 2vh; /* Slider handle height */
-  background: #51cccc; /* Green background */
-  cursor: pointer; /* Cursor on hover */
+  width: 2vh;
+  height: 2vh;
+  background: #51cccc;
+  cursor: pointer;
   border: none;
   border-radius: 50%;
+}
+
+#scaleBody{
+  position: fixed;
+  top: 1.5vh;
+  left: 35vw;
+  width: 30vw;
+  text-align: center;
+}
+
+#scaleBody select{
+  background-color: #161616;
+  color: white;
+  border: 2px solid #51cccc;
+  font-size: 1.5vh;
+  margin: 0 0.5vw;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 #selector{
@@ -114,7 +131,7 @@ body{
 @media (max-width: 1000px) {
 
   #volume{
-    top: 2vh;  
+    top: 2vh;
   }
 
   #volume p{
@@ -142,9 +159,24 @@ body{
   #rec{
     width: 60vw;
     left: 20vw;
+    bottom: 2vh;
   }
 
   #rec button{
     width: 25vw;
+    font-size: 2vh;
   }
+
+  #scaleBody{
+    display: none;
+  }
+}
+
+
+
+@media (max-width: 700px){
+  #volume, #rec{
+    display: none;
+  }
+
 }

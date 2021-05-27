@@ -18,9 +18,8 @@ A waveform of each node is displayed at the center of the screen, matching the c
 
 ## Other features
 
-  You can choose to delete nodes after you have placed them by switching to the "erase" function. There is also a recording feature if you want to record the sound that the synth makes.
-
+  You can choose to delete nodes after you have placed them by switching to the "erase" function. There is also a recording feature if you want to record the sound that the synth makes. The note scale used can also be changed if you want the drone to be in a specific key.
 
 ## Future features
 
-* A drop down menu that allows you to choose the scale that the notes are quantized to 
+  Nothing else planned at the moment!

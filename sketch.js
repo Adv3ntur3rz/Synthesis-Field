@@ -8,9 +8,8 @@ Creative Programming II
 *Synthesis Field
 
 TODO:
-  -Volume slider
+
   -tutorial
-  -keys
 */
 
 
@@ -28,8 +27,10 @@ let taskBarSize; //size of bottom and top bars that hold UI elements
 let recording, recordButton, stopRecordButton; //recording things
 let recorder, recordedFile; //^^ cont.
 let volumeSlider;
-//C scale in MIDI numbers
-let scale = [36, 38, 40, 41, 43, 45, 47, 48, 50, 52, 53, 55, 57, 59, 60, 62, 64, 65, 67, 69, 71, 72, 74, 76,77, 79, 81, 83, 84, 86, 88, 89, 91, 93, 95, 96];
+//scale in MIDI numbers
+let scaleNote = [36, 38, 40, 41, 43, 45, 47, 48, 50, 52, 53, 55, 57, 59, 60, 62, 64, 65, 67, 69, 71, 72, 74, 76,77, 79, 81, 83, 84, 86, 88, 89, 91, 93, 95, 96];
+let scaleSelect;
+let scaleIndex = 0; // add a number to the scale to shift it to other keys
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -40,6 +41,7 @@ function setup() {
   stopRecordButton = document.getElementById('stop');
 
   volumeSlider = document.getElementById("volumeSlider");
+  scaleSelect = document.getElementById('scaleSelect');
 
   recorder = new p5.SoundRecorder();
   recordedFile = new p5.SoundFile();
@@ -74,8 +76,8 @@ function draw() {
   noFill();
   strokeWeight(3);
   stroke(0, 0, 8);
-  for(var l = 0; l < scale.length; l++){
-    var interval = l * (height / scale.length);
+  for(var l = 0; l < scaleNote.length; l++){
+    var interval = l * (height / scaleNote.length);
     line(0, interval, width, interval);
   }
 
@@ -99,7 +101,11 @@ function draw() {
 function ui(){
   actionSelector();
 
+  //adjust volume
   masterVolume(map(volumeSlider.value, 0, 100, 0, 1));
+  //adjust key
+  scaleIndex = int(scaleSelect.value);
+  
   //center
   noFill();
   stroke(0,0 , 100, 0.4);
@@ -176,8 +182,8 @@ class Node{
     //nitial input mapping
     this.nodeSize = map(this.radial, abs(dist(0,0, width/2, height/2)), 0, minNodeSize, maxNodeSize);
     this.pan = map(this.x, 0, width, -0.9, 0.9);
-    var scaleNote = scale[int(map(this.y, 0, height, scale.length, 0))];
-    this.pitch = midiToFreq(scaleNote);
+    var note = scaleNote[int(map(this.y, 0, height, scaleNote.length, 0))]  + scaleIndex;
+    this.pitch = midiToFreq(note);
     this.amp = map(this.radial, abs(dist(0,0, width/2, height/2)), 0, 0, 0.5);
 
     //sound objects (oscillators)
@@ -253,8 +259,8 @@ class Node{
     this.rotational = Math.abs(degrees(Math.atan2((this.y - (height/ 2)), (this.x - (width/2)))));
     this.nodeSize = map(this.radial, abs(dist(0,0, width/2, height/2)), 0, minNodeSize, maxNodeSize);
     this.pan = map(this.x, 0, width, -0.9, 0.9);
-    var scaleNote = scale[int(map(this.y, 0, height, scale.length, 0))];
-    this.pitch = midiToFreq(scaleNote);
+    var note = scaleNote[int(map(this.y, 0, height, scaleNote.length, 0))] + scaleIndex;
+    this.pitch = midiToFreq(note);
     this.amp = map(this.radial, abs(dist(0,0, width/2, height/2)), 0, 0, 0.5);
   }
 
